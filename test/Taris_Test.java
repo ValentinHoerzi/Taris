@@ -28,7 +28,7 @@ public class Taris_Test {
     private static Person testPerson;
 
     public Taris_Test() {
-        this.testPerson = new Person("TestPerson", "localhost", "this");
+        this.testPerson = new Person("TestPerson", "localhost", "localIP");
     }
 
     @BeforeClass
