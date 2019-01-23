@@ -63,6 +63,7 @@ public class Taris_Test {
 
     @Before
     public void setUp() {
+        
     }
 
     @After
@@ -71,6 +72,6 @@ public class Taris_Test {
 
     @Test
     public void testGetWantedStringFromServer() {
-        
+        server_writer.println("Hello");
     }
 }
