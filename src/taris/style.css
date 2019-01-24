@@ -13,3 +13,5 @@
     -fx-background-color: white;
     -fx-border-width: 5px;
 }
+
+.displayLabelConnected{-fx-background-color: red}

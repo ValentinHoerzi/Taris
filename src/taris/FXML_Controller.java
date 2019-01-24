@@ -32,9 +32,16 @@ public class FXML_Controller implements Initializable {
     private PrintWriter server_writer; //Writer to server
     private BufferedReader server_reader; //Server reader
     private Receiver client;
+    @FXML
+    private Label confLabelConnected;
 
     private Dialog<Person> dialog;
-    private List<Person> clients = new LinkedList<>();
+    @FXML
+    private Menu menuSettings;
+    @FXML
+    private MenuItem menuItemLogin;
+    @FXML
+    private MenuItem menuItemDisconnect;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -58,7 +65,6 @@ public class FXML_Controller implements Initializable {
     private void handleMenuItemLogin(ActionEvent event) {
         if (!connected) {
             dialog.showAndWait().ifPresent(person -> {
-                clients.add(person);
                 String name = null;
                 try {
                     name = person.getName().trim();
@@ -79,6 +85,9 @@ public class FXML_Controller implements Initializable {
                     client = new Receiver(server_reader);
                     Thread runningThread = new Thread(client);
                     runningThread.start();
+                    
+                    confLabelConnected.setStyle("-fx-background-color: green");
+                    confLabelConnected.setText(person.getName());
                 } else {
                     showAlert("You are already connected");
                 }
@@ -125,7 +134,11 @@ public class FXML_Controller implements Initializable {
         if (event.getCode().equals(KeyCode.ENTER)) {
             if (connected) {
                 String text = textFieldText.getText().trim();
-                if (text != null && text.length() > 0 && !text.isEmpty()) {
+                if (text != null && text.length() > 0) {
+                    if (text.equals("<logout>")) {
+                        textFieldText.clear();
+                        return;
+                    }
                     server_writer.println(text);
                 } else {
                     showAlert("No Text");
@@ -138,7 +151,6 @@ public class FXML_Controller implements Initializable {
     }
 
     @FXML
-    private void handleMouseClickedItemEven(MouseEvent event) {
-
+    private void handleListViewClicked(MouseEvent event) {
     }
 }

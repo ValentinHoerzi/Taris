@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package alertcreator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,5 +41,9 @@ public class AlertCreator {
     public void setAlert(Alert alert)
     {
         this.alert = alert;
+    }
+    
+    public void accessButtons(List<ButtonType> buttons){
+        alert.getButtonTypes().setAll(buttons);
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -9,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="992.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taris.FXML_Controller">
     <children>
-      <MenuBar layoutY="-1.0" prefHeight="30.0" prefWidth="640.0" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+      <MenuBar layoutX="14.0" layoutY="3.0" prefHeight="25.0" prefWidth="920.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="4.0">
         <menus>
           <Menu fx:id="menuSettings" mnemonicParsing="false" text="Settings">
             <items>
@@ -19,7 +20,8 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ListView fx:id="listView" layoutX="15.0" layoutY="50.0" onMouseClicked="#handleMouseClickedItemEven" prefHeight="323.0" prefWidth="962.0" styleClass="listViewStyle" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <ListView fx:id="listView" layoutX="14.0" layoutY="43.0" onMouseClicked="#handleListViewClicked" prefHeight="323.0" prefWidth="962.0" styleClass="listViewStyle" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" />
       <TextField fx:id="textFieldText" layoutX="15.0" layoutY="385.0" onKeyPressed="#handleSendMessage" prefHeight="50.0" prefWidth="610.0" styleClass="textFieldStyle" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <Label fx:id="confLabelConnected" layoutX="920.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" styleClass="displayLabelConnected" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0" />
    </children>
 </AnchorPane>
